@@ -60,6 +60,11 @@ export default {
             property: false
         }
       },
+    },
+    redirect: {
+        login: '/auth/login',
+        logout: '/',
+        home: '/dashboard'
     }
   },
 
