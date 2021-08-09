@@ -17,7 +17,7 @@
                     <button type="submit" class="inline-flex items-center justify-center px-4 py-2 bg-gray-500 border border-transparent rounded-md font-semibold text-gray-50 uppercase tracking-wider hover:bg-gray-300 hover:text-gray-800 focus:outline-none focus:border-gray-700 focus:shadow-outline-blue active:bg-gray-300 transition ease-in-out duration-150">Submit</button>
                 </div>
                 <div class="flex justify-around mt-4">
-                    <NuxtLink to="#" class="text-white hover:text-blue-300">Forgot Password?</NuxtLink>
+                    <NuxtLink to="/auth/forgotPassword" class="text-white hover:text-blue-300">Forgot Password?</NuxtLink>
                     <NuxtLink to="/auth/register" class="text-white hover:text-blue-300">Need an account?</NuxtLink>
                 </div>
             </form>
