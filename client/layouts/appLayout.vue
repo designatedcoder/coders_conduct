@@ -8,7 +8,7 @@
                         <span>{{ this.$auth.user.name }}</span>
                         <NuxtLink to="/dashboard">DASHBOARD</NuxtLink>
                         <NuxtLink to="#">POSTS</NuxtLink>
-                        <NuxtLink to="#">SETTINGS</NuxtLink>
+                        <NuxtLink to="/auth/two-factor-authentication">SETTINGS</NuxtLink>
                         <a href="#" @click.prevent="logout">LOGOUT</a>
                     </template>
                     <template v-else>
