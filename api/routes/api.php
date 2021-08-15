@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,22 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::group(['middleware' => config('fortify.middleware', ['web'])], function () {
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('/email/verification-notification', [VerifyEmailController::class, 'resend'])
+        ->name('verification.send');
+});
 
-//     // Email Verification...
-//     if (Features::enabled(Features::emailVerification())) {
-//         if ($enableViews) {
-//             Route::get('/email/verify', [EmailVerificationPromptController::class, '__invoke'])
-//                 ->middleware(['auth'])
-//                 ->name('verification.notice');
-//         }
-
-//         Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-//             ->middleware(['auth', 'signed', 'throttle:6,1'])
-//             ->name('verification.verify');
-
-//         Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-//             ->middleware(['auth', 'throttle:6,1'])
-//             ->name('verification.send');
-//     }
-// });
+Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, 'verify'])
+    ->middleware(['signed'])
+    ->name('verification.verify');

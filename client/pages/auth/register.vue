@@ -49,7 +49,7 @@
                 try {
                     await this.$axios.$get('sanctum/csrf-cookie')
                     await this.$axios.$post('/api/register', this.form)
-                    await this.$auth.loginWith('laravelSanctum', {data: this.form})
+                    this.$router.replace('/auth/verify')
                 } catch (error) {
                     this.errors = error.response.data.errors
                 }
