@@ -90,6 +90,7 @@
 <script>
     export default {
         layout: 'appLayout',
+        middleware: ['auth', 'verified'],
         data:()=> ({
             openConfirm: false,
             isEnabled: false,

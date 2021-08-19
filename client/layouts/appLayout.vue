@@ -7,7 +7,7 @@
                     <template v-if="this.$auth.loggedIn">
                         <span>{{ this.$auth.user.name }}</span>
                         <NuxtLink to="/dashboard">DASHBOARD</NuxtLink>
-                        <NuxtLink to="#">POSTS</NuxtLink>
+                        <NuxtLink to="/posts">POSTS</NuxtLink>
                         <NuxtLink to="/auth/two-factor-authentication">SETTINGS</NuxtLink>
                         <a href="#" @click.prevent="logout">LOGOUT</a>
                     </template>
